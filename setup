@@ -148,6 +148,20 @@ r["bayesmendel"] <- "https://bayesmendel.github.io/drat/"
 # You can check if this worked by entering the line below in R Studio after you re-open it: 
 options('repos')
 
+# Another method can be used if locating your Rprofile file is difficult (such as on R Studio workbench):
+# Open your Rprofile:
+file.edit(file.path("~", ".Rprofile")) # edit .Rprofile in HOME
+#file.edit(".Rprofile") # edit project specific .Rprofile    
+
+# Now type in to the file:
+
+ local({r <- getOption("repos")
+       r["CRAN"] <- "https://mirrors.nics.utk.edu/cran/"
+       r["bayesmendel"] <- "https://bayesmendel.github.io/drat/"
+       options(repos=r)})
+       
+# Save the file and close it.
+
 # Optionally, instead of adding the drat repo to your permanent Rprofile, you can add it
 # to your current session by enter this in your R Studio console:
 
