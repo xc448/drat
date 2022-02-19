@@ -6,3 +6,30 @@ Suggests: git2r, knitr, rmarkdown
 License: GPL (>= 2)
 MD5sum: 2e7107c8bc567c3e7d1aedbd7aaeb396
 NeedsCompilation: no
+
+Package: ggpattern
+Version: 0.4.0-4
+Imports: ggplot2, glue, grid, gridpattern (>= 0.5.0-7), rlang, scales,
+Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>= 1.2.0), readr, rmarkdown, sf (>= 0.7-3), testthat (>= 2.1.0),
+                vdiffr
+License: MIT + file LICENSE
+MD5sum: 62ccdd185ed9b3bc4225f78ce2491c86
+NeedsCompilation: no
+
+Package: gridpattern
+Version: 0.5.1
+Depends: R (>= 3.4.0)
+Imports: glue, grDevices, grid, memoise, png, rlang, sf, utils
+Suggests: ambient, knitr, magick, ragg, rmarkdown, testthat, vdiffr
+License: MIT + file LICENSE
+MD5sum: c060e113429a27388963b73971c7683e
+NeedsCompilation: no
+
+Package: waffle
+Version: 1.0.1
+Depends: R (>= 3.5.0), ggplot2 (>= 3.1.0)
+Imports: RColorBrewer, grid, gridExtra, gtable, extrafont, curl, stringr, stats, htmlwidgets, DT, rlang, utils
+Suggests: testthat, knitr, rmarkdown, dplyr, ggthemes
+License: GPL (>= 2)
+MD5sum: 0b1ba8115ce5d0f18eb526c716832f0d
+NeedsCompilation: no
