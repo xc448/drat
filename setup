@@ -20,7 +20,7 @@
 # https://www.r-bloggers.com/2011/11/permanently-setting-the-cran-repository/
 
 
-# Step 1 - For desired package to the BayesMendel GitHub account
+# Step 1 - Fork desired package to the BayesMendel GitHub account
 #
 # This will ensure that we "freeze" any versions that we know work for our apps.
 # This is not necessary for PanelPRO which is obviously already on our lab's GitHub
