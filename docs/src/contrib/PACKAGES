@@ -16,6 +16,15 @@ License: MIT + file LICENSE
 MD5sum: 267103a3b7ab58736cdea84e0df8f1fd
 NeedsCompilation: no
 
+Package: echarts4r
+Version: 0.4.2
+Depends: R (>= 4.1.0)
+Imports: htmlwidgets, dplyr (>= 0.7.0), purrr, countrycode, broom, shiny, scales, corrplot, htmltools, jsonlite, rstudioapi
+Suggests: tidyr, testthat, knitr, rmarkdown, covr, data.tree, leaflet, tibble
+License: Apache License (>= 2.0)
+MD5sum: 443c8fd7bad3d2aae2c808fc0e2b0851
+NeedsCompilation: no
+
 Package: ggpattern
 Version: 0.4.0-4
 Imports: ggplot2, glue, grid, gridpattern (>= 0.5.0-7), rlang, scales,
