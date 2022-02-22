@@ -7,6 +7,15 @@ License: GPL (>= 2)
 MD5sum: 2e7107c8bc567c3e7d1aedbd7aaeb396
 NeedsCompilation: no
 
+Package: echarts4r.assets
+Version: 0.0.1
+Depends: R (>= 2.10)
+Imports: base64enc, dplyr, shiny, magrittr
+Suggests: echarts4r, knitr, rmarkdown
+License: MIT + file LICENSE
+MD5sum: 267103a3b7ab58736cdea84e0df8f1fd
+NeedsCompilation: no
+
 Package: ggpattern
 Version: 0.4.0-4
 Imports: ggplot2, glue, grid, gridpattern (>= 0.5.0-7), rlang, scales,
