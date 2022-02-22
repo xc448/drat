@@ -38,10 +38,9 @@ git clone [cloning http URL from R package GitHub repo]
 # Step 3 - Build the desired R package
 #
 # Using RStudio Console:
-setwd([directory which the desired R package was cloned to])
 # install.packages("devtools") # if necessary
 library(devtools)
-setwd("./[package local repo directory name]")
+setwd("./[package's local repo directory that was cloned above]")
 build(vignettes=F)
 
 # Now ensure that the tar.gz file generated in the previous code is inside it's local repo directory.
@@ -84,6 +83,7 @@ remotes::install_github("eddelbuettel/drat")
 # Using RStudio Console:
 library(drat)
 options(dratBranch="docs")   # to default to using docs/ as we set up
+setwd("[one level up from drat local repo]")
 insertPackage(file="[path to package directory]/[file name].tar.gz", repodir="drat/")
 
 
@@ -101,19 +101,21 @@ git config --global user.name "YourName"
 git add .  # this will add the PACKAGE summary files for the repo only
 git add -f [path to tar.gz file of the desired package] # this will add the acutal package tar.gz file
 git commit -m "added [package name]"
+# note "git pull" may be required before the next command
 git push origin master 
 
 
 # Step 10 - Install the desired package using the drat repo
 # 
-# First confirm previous versions of the desired package have been uninstalled from R
-# Next, install the desired package in R Studio from the new drat repository
+# First, close any open R projects
+# Next, confirm previous versions of the desired package have been uninstalled from R
+# Finally, install the desired package in R Studio from the new drat repository
 #
 # Using RStudio Console:
 install.packages("[package name]", repos="https://bayesmendel.github.io/drat/")
 
-# Confirm the package installed succefully, otherwise start over and start troubleshooting
-# First troubleshooting step should be restarting R Studio
+# Now, confirm the package installed succefully, otherwise start over and start troubleshooting
+# The first troubleshooting step should be restarting R Studio
 
 
 # Step 11 - Register drat repo with your R Studio's list of repos 
