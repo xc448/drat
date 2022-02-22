@@ -20,15 +20,15 @@
 # https://www.r-bloggers.com/2011/11/permanently-setting-the-cran-repository/
 
 
-# Step 1 - For desired package to the BayesMendel GitHub account
+# Step 1 - Fork desired package to the BayesMendel GitHub account
 #
-# this will ensure that we "freeze" any versions that we know work for our apps
-# not necessary for PanelPRO which is obviously already on our lab's GitHub
+# This will ensure that we "freeze" any versions that we know work for our apps.
+# This is not necessary for PanelPRO which is obviously already on our lab's GitHub
 
 
 # Step 2 - Clone the desired GitHub repo to your machine from the BayesMendel GitHub account 
 #
-# First locate the cloning http link for the desired repo and copy it
+# First, locate the cloning http link for the desired repo and copy it
 # Using a linux terminal:
 # cd to the location you want to store the package repos on your machine, then:
 
@@ -39,13 +39,13 @@ git clone [cloning http URL from R package GitHub repo]
 #
 # Using RStudio Console:
 setwd([directory which the desired R package was cloned to])
-# install.packages(devtools) # if necessary
+# install.packages("devtools") # if necessary
 library(devtools)
 setwd("./[package local repo directory name]")
 build(vignettes=F)
 
-# now ensure that the tar.gz file generated in the previous code is inside it's local repo directory.
-# if it is not, move it there 
+# Now ensure that the tar.gz file generated in the previous code is inside it's local repo directory.
+# If it is not, move it there now.
 
 
 # Step 4 - If not done yet, fork the drat GitHub repo to BayesMendel and set it up 
@@ -65,6 +65,7 @@ build(vignettes=F)
 # Step 5 - Clone the drat repository from the BayesMendel GitHub to your local machine
 #
 # Using a linux terminal:
+# First, cd to the same directory path level where the desired package was cloned
 
 git clone https://github.com/bayesmendel/drat.git
 
@@ -78,7 +79,7 @@ git clone https://github.com/bayesmendel/drat.git
 remotes::install_github("eddelbuettel/drat")
 
 
-# Step 6 - Transfer desired package to the new drat local repo 
+# Step 7 - Transfer desired package to the new drat local repo 
 #
 # Using RStudio Console:
 library(drat)
@@ -86,23 +87,24 @@ options(dratBranch="docs")   # to default to using docs/ as we set up
 insertPackage(file="[path to package directory]/[file name].tar.gz", repodir="drat/")
 
 
-# Step 7 - If your GitHub credentials haven't been registered with your local environment, do that now
+# Step 8 - If your GitHub credentials haven't been registered with your local environment, do that now
 #
 # Using a linux terminal:
 git config --global user.email "yourGitHubemail@yourdomainhere"
 git config --global user.name "YourName"
 
 
-# Step 8 - Commit and push the package you just added to drat repo
+# Step 9 - Commit and push the package you just added to drat repo
 #
 # Using a linux terminal:
+# cd into the local drat repo that was previously cloned
 git add .  # this will add the PACKAGE summary files for the repo only
-git add [path to tar.gz file of the desired package] # this will add the acutal package tar.gz file
+git add -f [path to tar.gz file of the desired package] # this will add the acutal package tar.gz file
 git commit -m "added [package name]"
 git push origin master 
 
 
-# Step 9 - Install the desired package using the drat repo
+# Step 10 - Install the desired package using the drat repo
 # 
 # First confirm previous versions of the desired package have been uninstalled from R
 # Next, install the desired package in R Studio from the new drat repository
@@ -110,27 +112,63 @@ git push origin master
 # Using RStudio Console:
 install.packages("[package name]", repos="https://bayesmendel.github.io/drat/")
 
-# confirm the package installed succefully, otherwise start over and start troubleshooting
+# Confirm the package installed succefully, otherwise start over and start troubleshooting
+# First troubleshooting step should be restarting R Studio
 
 
-# Step 10 - Register drat repo with your R Studio's list of repos 
+# Step 11 - Register drat repo with your R Studio's list of repos 
 #
-# this needs to be done before trying to deploy an app on R Connect with your newly installed package
-# R Connect will only install packages from the repos registered on the local R Studio 
-# Note the steps below will only register the drat repo for the current R session
-# See how to permanently register drat as a repo for your local R Studio below 
+# On your machine, locate the path to your Rprofile.site file. 
+# For windows this should be located in something like this path: C:\Program Files\R\R-4.1.0\etc
+# Open a text file editor, like NotePad++, in administrator mode
+# Non-Windows OS's may not require administrator mode
+# You will see a section of commented out code in Rprofile.site that looks similar to:
 #
-# Using RStudio Console:
-drat::addRepo("https://bayesmendel.github.io/drat/")
-# you can check if this worked by entering: 
-# options('repos')
-
-
-# Step 11 - Deploy your Shiny app to R Connect
+# set a CRAN mirror
+# local({r <- getOption("repos")
+#        r["CRAN"] <- "http://my-local-cran.com"
+#        options(repos=r)})
 #
-# Note, this will only work if you did not close / restart your R Studio session between the previous step and this step
+# First, uncomment this section of code stargin with the line that starts with "local({"
+# Next, replace the placeholder "http://my-local-cran.com" with your CRAN mirror of choice.
+# All CRAN mirros are listed here: https://cran.r-project.org/mirrors.html. 
+# It's recommended you pick one somewhat close to your physical location that has an https prefix (not an http).
+# Next, add this line of code above "options(repos=r)})":
+
+r["bayesmendel"] <- "https://bayesmendel.github.io/drat/"
+
+# You will end up with an uncommented section of code that looks similar to:
+
+ local({r <- getOption("repos")
+       r["CRAN"] <- "https://mirrors.nics.utk.edu/cran/"
+       r["bayesmendel"] <- "https://bayesmendel.github.io/drat/"
+       options(repos=r)})
+	   
+# Finally, save and close the file, then restart R Studio so the changes take effect.
+# You can check if this worked by entering the line below in R Studio after you re-open it: 
+options('repos')
+
+# Another method can be used if locating your Rprofile file is difficult (such as on R Studio workbench):
+# Open your Rprofile:
+file.edit(file.path("~", ".Rprofile")) # edit .Rprofile in HOME
+#file.edit(".Rprofile") # edit project specific .Rprofile    
+
+# Now type in to the file:
+
+ local({r <- getOption("repos")
+       r["CRAN"] <- "https://mirrors.nics.utk.edu/cran/"
+       r["bayesmendel"] <- "https://bayesmendel.github.io/drat/"
+       options(repos=r)})
+       
+# Save the file and close it.
+
+# Optionally, instead of adding the drat repo to your permanent Rprofile, you can add it
+# to your current session by enter this in your R Studio console:
+
+drat::addRepo("bayesmendel")
+
+# If you only register the the drat repo for your current R Studio session then you may need
+# to do this step right before every deployment 
 
 
-# Step 12 - Permanently register drat repo with local R Studio
-# 
-# Once you do this, every time your deploy the non-CRAN package(s) you need will be automatically installed from the BayesMendel drat repo 
+# Step 12 - Deploy your Shiny app to R Connect
