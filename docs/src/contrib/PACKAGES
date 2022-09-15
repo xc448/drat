@@ -1,3 +1,10 @@
+Package: cbcrisk
+Version: 2.0
+Depends: R (>= 3.5.0), stats (>= 3.3.0), survival (>= 2.39.2)
+License: GPL-2
+MD5sum: a9f86b805e0abbc1d6d887429d706c3f
+NeedsCompilation: no
+
 Package: drat
 Version: 0.1.8
 Depends: R (>= 3.2.0)
@@ -28,8 +35,8 @@ NeedsCompilation: no
 Package: ggpattern
 Version: 0.4.0-4
 Imports: ggplot2, glue, grid, gridpattern (>= 0.5.0-7), rlang, scales,
-Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>= 1.2.0), readr, rmarkdown, sf (>= 0.7-3), testthat (>= 2.1.0),
-                vdiffr
+Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>= 1.2.0), readr, rmarkdown, sf (>= 0.7-3), testthat (>=
+               2.1.0), vdiffr
 License: MIT + file LICENSE
 MD5sum: 62ccdd185ed9b3bc4225f78ce2491c86
 NeedsCompilation: no
