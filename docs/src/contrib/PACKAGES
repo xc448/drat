@@ -17,8 +17,8 @@ NeedsCompilation: no
 Package: echarts4r
 Version: 0.4.2
 Depends: R (>= 4.1.0)
-Imports: htmlwidgets, dplyr (>= 0.7.0), purrr, countrycode, broom, shiny, scales, corrplot, htmltools,
-           jsonlite, rstudioapi
+Imports: htmlwidgets, dplyr (>= 0.7.0), purrr, countrycode, broom, shiny, scales,
+         corrplot, htmltools, jsonlite, rstudioapi
 Suggests: tidyr, testthat, knitr, rmarkdown, covr, data.tree, leaflet, tibble
 License: Apache License (>= 2.0)
 MD5sum: 443c8fd7bad3d2aae2c808fc0e2b0851
@@ -33,11 +33,23 @@ License: MIT + file LICENSE
 MD5sum: 267103a3b7ab58736cdea84e0df8f1fd
 NeedsCompilation: no
 
+Package: Fam3PRO
+Version: 2.0.0
+Depends: R (>= 3.5.0)
+Imports: Rcpp (>= 1.0.3), kinship2, abind, doParallel, parallel, foreach, crayon,
+         rlang, ggplot2, dplyr, plotly, doRNG, htmltools, iterators, stats, devtools,
+         cbcrisk
+LinkingTo: Rcpp, RcppArmadillo
+Suggests: knitr, rmarkdown, testthat (>= 2.1.0)
+License: file LICENSE
+MD5sum: 4f7fef415f9fd05ba9e8053f21c6a597
+NeedsCompilation: yes
+
 Package: ggpattern
 Version: 0.4.0-4
 Imports: ggplot2, glue, grid, gridpattern (>= 0.5.0-7), rlang, scales,
-Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>= 1.2.0), readr,
-           rmarkdown, sf (>= 0.7-3), testthat (>= 2.1.0), vdiffr
+Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>=
+         1.2.0), readr, rmarkdown, sf (>= 0.7-3), testthat (>= 2.1.0), vdiffr
 License: MIT + file LICENSE
 MD5sum: 62ccdd185ed9b3bc4225f78ce2491c86
 NeedsCompilation: no
@@ -51,22 +63,11 @@ License: MIT + file LICENSE
 MD5sum: c060e113429a27388963b73971c7683e
 NeedsCompilation: no
 
-Package: PanelPRO
-Version: 1.1.0
-Depends: R (>= 3.5.0)
-Imports: Rcpp (>= 1.0.3), kinship2, abind, doParallel, parallel, foreach, crayon, rlang, ggplot2, dplyr,
-           plotly, doRNG, htmltools, iterators, stats, devtools, cbcrisk
-LinkingTo: Rcpp, RcppArmadillo
-Suggests: knitr, rmarkdown, testthat (>= 2.1.0)
-License: file LICENSE
-MD5sum: 2e934331cb95c3ee34180421b0d60662
-NeedsCompilation: yes
-
 Package: waffle
 Version: 1.0.1
 Depends: R (>= 3.5.0), ggplot2 (>= 3.1.0)
-Imports: RColorBrewer, grid, gridExtra, gtable, extrafont, curl, stringr, stats, htmlwidgets, DT, rlang,
-           utils
+Imports: RColorBrewer, grid, gridExtra, gtable, extrafont, curl, stringr, stats,
+         htmlwidgets, DT, rlang, utils
 Suggests: testthat, knitr, rmarkdown, dplyr, ggthemes
 License: GPL (>= 2)
 MD5sum: 0b1ba8115ce5d0f18eb526c716832f0d
