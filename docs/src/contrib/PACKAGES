@@ -18,7 +18,7 @@ Package: echarts4r
 Version: 0.4.2
 Depends: R (>= 4.1.0)
 Imports: htmlwidgets, dplyr (>= 0.7.0), purrr, countrycode, broom, shiny, scales,
-         corrplot, htmltools, jsonlite, rstudioapi
+          corrplot, htmltools, jsonlite, rstudioapi
 Suggests: tidyr, testthat, knitr, rmarkdown, covr, data.tree, leaflet, tibble
 License: Apache License (>= 2.0)
 MD5sum: 443c8fd7bad3d2aae2c808fc0e2b0851
@@ -34,22 +34,21 @@ MD5sum: 267103a3b7ab58736cdea84e0df8f1fd
 NeedsCompilation: no
 
 Package: Fam3PRO
-Version: 2.0.0
+Version: 2.0.1
 Depends: R (>= 3.5.0)
-Imports: Rcpp (>= 1.0.3), kinship2, abind, doParallel, parallel, foreach, crayon,
-         rlang, ggplot2, dplyr, plotly, doRNG, htmltools, iterators, stats, devtools,
-         cbcrisk
+Imports: Rcpp (>= 1.0.3), kinship2, abind, doParallel, parallel, foreach, crayon, rlang,
+          ggplot2, dplyr, plotly, doRNG, htmltools, iterators, stats, devtools
 LinkingTo: Rcpp, RcppArmadillo
 Suggests: knitr, rmarkdown, testthat (>= 2.1.0)
 License: file LICENSE
-MD5sum: 4f7fef415f9fd05ba9e8053f21c6a597
+MD5sum: 406cb4cec487242d35589afba0388aab
 NeedsCompilation: yes
 
 Package: ggpattern
 Version: 0.4.0-4
 Imports: ggplot2, glue, grid, gridpattern (>= 0.5.0-7), rlang, scales,
-Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>=
-         1.2.0), readr, rmarkdown, sf (>= 0.7-3), testthat (>= 2.1.0), vdiffr
+Suggests: ambient, dplyr, gganimate, knitr, magick, mapproj, maps, png, ragg (>= 1.2.0),
+          readr, rmarkdown, sf (>= 0.7-3), testthat (>= 2.1.0), vdiffr
 License: MIT + file LICENSE
 MD5sum: 62ccdd185ed9b3bc4225f78ce2491c86
 NeedsCompilation: no
@@ -67,7 +66,7 @@ Package: waffle
 Version: 1.0.1
 Depends: R (>= 3.5.0), ggplot2 (>= 3.1.0)
 Imports: RColorBrewer, grid, gridExtra, gtable, extrafont, curl, stringr, stats,
-         htmlwidgets, DT, rlang, utils
+          htmlwidgets, DT, rlang, utils
 Suggests: testthat, knitr, rmarkdown, dplyr, ggthemes
 License: GPL (>= 2)
 MD5sum: 0b1ba8115ce5d0f18eb526c716832f0d
