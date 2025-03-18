@@ -1,0 +1,10 @@
+Package: Fam3PRO
+Version: 2.0.1
+Depends: R (>= 3.5.0)
+Imports: Rcpp (>= 1.0.3), kinship2, abind, doParallel, parallel, foreach, crayon, rlang,
+          ggplot2, dplyr, plotly, doRNG, htmltools, iterators, stats, devtools
+LinkingTo: Rcpp, RcppArmadillo
+Suggests: knitr, rmarkdown, testthat (>= 2.1.0)
+License: file LICENSE
+MD5sum: 406cb4cec487242d35589afba0388aab
+NeedsCompilation: yes
