@@ -33,6 +33,7 @@ License: MIT + file LICENSE
 MD5sum: 267103a3b7ab58736cdea84e0df8f1fd
 NeedsCompilation: no
 
+
 Package: Fam3PRO
 Version: 2.0.1
 Depends: R (>= 3.5.0)
